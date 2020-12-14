@@ -4,19 +4,15 @@ using UnityEngine;
 
 public class Lasers : MonoBehaviour
 {
-    // Start is called before the first frame update
     void OnTriggerEnter2D (Collider2D col) {
-        //if (col.collider.CompareTag("Character")) {
         Destroy(col.gameObject); 
         Destroy(gameObject);
-        //}
     }
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         

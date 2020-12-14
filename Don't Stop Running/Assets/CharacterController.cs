@@ -5,13 +5,11 @@ using UnityEngine;
 public class CharacterController : MonoBehaviour
 {
     [SerializeField] private LayerMask platformslayerMask; 
-    //private CharacterController_Base Character;
     private Rigidbody2D rigidbody2d; 
     private BoxCollider2D boxCollider2D; 
     public float moveSpeed = 5f; 
 
     private void Awake() {
-        //Character = gameObject.GetComponent<CharacterController_Base>(); 
         rigidbody2d = transform.GetComponent<Rigidbody2D>(); 
         boxCollider2D = transform.GetComponent<BoxCollider2D>();  
     }
@@ -30,19 +28,8 @@ public class CharacterController : MonoBehaviour
         RaycastHit2D raycastHit2d = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.down, .1f, platformslayerMask); 
         return raycastHit2d.collider != null; 
     }
-
-
-
-    //private void HandleMovement() { 
-      //  float moveSpeed = 40f; 
-        //if (Input.GetKey(KeyCode.LeftArrow)) {
-          //  rigidbody2d.velocity = new Vector2(moveSpeed, rigidbody2d.velocity.y); 
-        //} else {
-          //  if (Input.GetKey(KeyCode.RightArrow)) {
-            //    rigidbody2d.velocity = new Vector2(moveSpeed, rigidbody2d.velocity.y); 
-            //} else { 
-              //  rigidbody2d.velocity = new Vector2(0, rigidbody2d.velocity.y); 
-            //}
-        //}
-    //}
 }
+
+
+
+    

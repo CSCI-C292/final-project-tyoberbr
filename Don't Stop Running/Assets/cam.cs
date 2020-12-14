@@ -17,15 +17,11 @@ public class cam : MonoBehaviour {
         ScoreIncreased = 1f; 
     }
 
-	// Use this for initialization
 
-	// Update is called once per frame
 	void Update () {
         ScoreText.text = "Score: " + (int)ScoreAmount; 
-		//check that player exists and then proceed. otherwise we get an error when player dies
 		if (player) {
             ScoreAmount += ScoreIncreased * Time.deltaTime;
-			//if player has passed the x position of -1 then start moving camera forward with a randomish Y position
 			if (player.transform.position.x > -1) {
 
 				
